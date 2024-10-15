@@ -1,0 +1,39 @@
+using System.Collections;
+ConsoleApplication.Run();
+public class ConsoleApplication {
+    public static void Run(){
+        // prompt the user for the type of shape they would like to use (rectangle, triange, or circle)
+        Console.Write("What type of shape (R)ectangle, (T)riangle, (C)ircle? ");
+        string shape = Console.ReadLine().ToUpper();
+
+        switch (shape) {
+            case "R": 
+                Console.Write("Enter the length: ");
+                double length = double.Parse(Console.ReadLine());
+                Console.Write("Enter with width: ");
+                double width = double.Parse(Console.ReadLine());
+                double area_r = Math.Round(length * width, 2);
+                Console.WriteLine("The area of this rectangle is " + area_r);
+                break;
+            case "T":
+                Console.Write("Enter the base: ");
+                double baseb = double.Parse(Console.ReadLine());
+                Console.Write("Enter with height: ");
+                double heighth = double.Parse(Console.ReadLine());
+                double area_t = (baseb * heighth) / 2;
+                Console.WriteLine("The area of this triangle is " + area_t);
+                break;
+            case "C":
+                Console.Write("Enter the radius: ");
+                double radius = double.Parse(Console.ReadLine());
+                // Math.PI provides the value of π (pi) to a high degree of accuracy.
+                // Math.Pow(radius, 2) computes the square of the radius.
+                double area_c = Math.Round(Math.PI * Math.Pow(radius, 2));
+                Console.WriteLine("The area of this circle is " + area_c);
+                break;
+            default:
+                Console.WriteLine ("Wrong shape, choose correctly next time!");
+                break;
+        }
+    }
+}
